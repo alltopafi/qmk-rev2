@@ -23,9 +23,11 @@ AUDIO_ENABLE = no          # Audio output
 JOYSTICK_ENABLE = no       # Joystick Game controller HID Interface
 JOYSTICK_DRIVER = analog    # Stick mode analog or digital
 
-POINTING_DEVICE_ENABLE = no # Generic Pointer
-# SRC += analog.c
+POINTING_DEVICE_ENABLE = yes # Generic Pointer
+SRC += analog.c
 POINTING_DEVICE_DRIVER = custom
+
+# SRC += analog.c
 # POINTING_DEVICE_DRIVER = analog_joystick
 
 

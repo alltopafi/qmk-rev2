@@ -109,8 +109,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     // init pin? Is needed?
 //     // setPinInputHigh(E6);
 //     // Account for drift
-//     xOrigin = analogReadPin(MCP_X_AXIS);
-//     yOrigin = analogReadPin(MCP_Y_AXIS);
+//     // xOrigin = analogReadPin(B5);
+//     // yOrigin = analogReadPin(B6);
+//     xOrigin = analogReadPin(GPA0);
+//     yOrigin = analogReadPin(GPA1);
 // }
 
 // void pointing_device_task(void) {
@@ -119,8 +121,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     // todo read as one vector
 //     if (timer_elapsed(lastCursor) > cursorTimeout) {
 //         lastCursor = timer_read();
-//         report.x   = axisToMouseComponent(MCP_X_AXIS, xOrigin, maxCursorSpeed, xPolarity);
-//         report.y   = axisToMouseComponent(MCP_Y_AXIS, yOrigin, maxCursorSpeed, yPolarity);
+//         // report.x   = axisToMouseComponent(B5, xOrigin, maxCursorSpeed, xPolarity);
+//         // report.y   = axisToMouseComponent(B6, yOrigin, maxCursorSpeed, yPolarity);
+
+//         report.x   = axisToMouseComponent(GPA0, xOrigin, maxCursorSpeed, xPolarity);
+//         report.y   = axisToMouseComponent(GPA1, yOrigin, maxCursorSpeed, yPolarity);
 //     }
 
 //     //
@@ -224,9 +229,9 @@ bool oled_task_user(void) {
 void keyboard_post_init_user(void) {
 //   // Customise these values to desired behaviour
   debug_enable=true;
-  debug_matrix=true;
+//   debug_matrix=true;
   debug_keyboard=true;
-//   //debug_mouse=true;
+  debug_mouse=true;
 }
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
