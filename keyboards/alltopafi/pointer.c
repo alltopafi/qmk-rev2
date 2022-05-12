@@ -15,7 +15,7 @@ uint8_t precisionSpeed = 1;
 uint8_t speedRegulator = 24;  // Lower Values Create Faster Movement
 
 int8_t xPolarity = 1;
-int8_t yPolarity = -1;
+int8_t yPolarity = 1;
 
 uint8_t cursorTimeout = 10;
 
@@ -71,9 +71,9 @@ void pointing_device_init(void) {
     // init pin? Is needed?
     // setPinInputHigh(E6);
     // Account for drift
-    xOrigin = analogReadPin(B5);
-    yOrigin = analogReadPin(B6);
-    uprintf("xOrigin: %d\nyOrigin: %d", xOrigin, yOrigin);
+    xOrigin = analogReadPin(POINTER_X_AXIS_PIN);
+    yOrigin = analogReadPin(POINTER_Y_AXIS_PIN);
+    // uprintf("xOrigin: %d\nyOrigin: %d", xOrigin, yOrigin);
 }
 
 void pointing_device_task(void) {
@@ -82,8 +82,8 @@ void pointing_device_task(void) {
     // todo read as one vector
     if (timer_elapsed(lastCursor) > cursorTimeout) {
         lastCursor = timer_read();
-        report.x   = axisToMouseComponent(B5, xOrigin, maxCursorSpeed, xPolarity);
-        report.y   = axisToMouseComponent(B6, yOrigin, maxCursorSpeed, yPolarity);
+        report.x   = axisToMouseComponent(POINTER_X_AXIS_PIN, xOrigin, maxCursorSpeed, xPolarity);
+        report.y   = axisToMouseComponent(POINTER_Y_AXIS_PIN, yOrigin, maxCursorSpeed, yPolarity);
     }
 
     //

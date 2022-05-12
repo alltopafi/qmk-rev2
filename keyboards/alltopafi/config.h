@@ -45,16 +45,14 @@
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
 
-/* #define ENCODERS_PAD_A \
-//     { B2 }
-// #define ENCODERS_PAD_B \
-//     { B1 }
+#define POINTER_X_AXIS_PIN B5
+#define POINTER_Y_AXIS_PIN F0
 
-// #define MCP2301X_ENCODERS_PAD_A { GPB5 }
-// #define MCP2301X_ENCODERS_PAD_B { GPB4 }
+#define ENCODERS_PAD_A { B6 }
+#define ENCODERS_PAD_B { B2 }
+
 
 #define USB_MAX_POWER_CONSUMPTION 100
-*/
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
