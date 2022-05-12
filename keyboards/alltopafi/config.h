@@ -14,8 +14,8 @@
 #define PRODUCT Torn
 
 /* key matrix size */
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 12
+#define MATRIX_ROWS 5
+#define MATRIX_COLS 14
 
 /*
  * Keyboard Matrix Assignments
@@ -28,15 +28,15 @@
  *
  */
 #define MATRIX_ROW_PINS \
-    { D4, D1, D0, D5 }
+    { F4, F5, F6, F7, B1 }
 #define MATRIX_COL_PINS \
-    { B3, B4, B5, B0, D7, D6 }
+    { D3, D2, D4, C6, D7, E6, B4 }
 #define UNUSED_PINS
 
 #define MCP2301X_ROW_PINS \
-    { GPA7, GPA6, GPA5, GPA4 }
+    { GPA7, GPA6, GPA5, GPA4, GPA3 }
 #define MCP2301X_COL_PINS \
-    { GPB0, GPB1, GPB2, GPB3, GPB4, GPB5 }
+    { GPB0, GPB1, GPB2, GPB3, GPB4, GPB5, GPB6 }
 
 #define MCP2301X_INPUT   ( GPB3 | GPB2 | GPB1 | GPB0 | GPB4 | GPB5 )
 #define MCP2301X_PULLUP  ( GPB3 | GPB2 | GPB1 | GPB0 | GPB4 | GPB5 )
