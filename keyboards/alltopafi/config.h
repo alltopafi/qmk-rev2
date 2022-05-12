@@ -34,12 +34,12 @@
 #define UNUSED_PINS
 
 #define MCP2301X_ROW_PINS \
-    { GPA5, GPA6, GPA7, GPA4 }
+    { GPA7, GPA6, GPA5, GPA4 }
 #define MCP2301X_COL_PINS \
-    { GPA3, GPA2, GPA1, GPA0, GPB7, GPB6 }
+    { GPB0, GPB1, GPB2, GPB3, GPB4, GPB5 }
 
-#define MCP2301X_INPUT   ( GPA0 | GPA1 | GPA2 | GPA3 | GPB0 | GPB1 | GPB2 | GPB3 | GPB4 | GPB5 | GPB6 | GPB7 )
-#define MCP2301X_PULLUP  ( GPA0 | GPA1 | GPA2 | GPA3 | GPB3 | GPB4 | GPB5 | GPB6 | GPB7 )
+#define MCP2301X_INPUT   ( GPB3 | GPB2 | GPB1 | GPB0 | GPB4 | GPB5 )
+#define MCP2301X_PULLUP  ( GPB3 | GPB2 | GPB1 | GPB0 | GPB4 | GPB5 )
 #define MCP2301X_ENABLED ( GPB0 | GPB1 | GPB2 )
 
 /* COL2ROW, ROW2COL*/
@@ -52,8 +52,9 @@
 
 // #define MCP2301X_ENCODERS_PAD_A { GPB5 }
 // #define MCP2301X_ENCODERS_PAD_B { GPB4 }
-*/
+
 #define USB_MAX_POWER_CONSUMPTION 100
+*/
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5

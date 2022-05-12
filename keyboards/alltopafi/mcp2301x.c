@@ -41,9 +41,24 @@ void mcp2301x_init(mcp2301x_pin_t input, mcp2301x_pin_t pullup, mcp2301x_pin_t e
     mcp2301x_writeReg(GPIOA, gpio, 2);
     mcp2301x_writeReg(IODIRA, iodir, 2);
     mcp2301x_writeReg(GPPUA, gppu, 2);
+
+    #ifdef CONSOLE_ENABLE
+        if(mcp2301x_status == I2C_STATUS_SUCCESS) {
+            uprintf("mcp2301x init completed.\n");
+        } else {
+            uprintf("mcp2301x init failed.\n");
+        }
+    #endif
 }
 
-bool mcp2301x_reset_required(void) { return mcp2301x_status != I2C_STATUS_SUCCESS; }
+bool mcp2301x_reset_required(void) {
+    #ifdef CONSOLE_ENABLE
+    if(mcp2301x_status != I2C_STATUS_SUCCESS) {
+        uprintf("mcp2301x_status = %d and I2C_STATUS_SUCCESS = %d\nmcp2301x requires restart.\n", mcp2301x_status, I2C_STATUS_SUCCESS);
+    }
+    #endif
+    return mcp2301x_status != I2C_STATUS_SUCCESS;
+    }
 
 mcp2301x_status_t mcp2301x_writePins(mcp2301x_pin_t gpio) {
     const uint8_t reg[2] = PINS2REG(gpio);
