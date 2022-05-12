@@ -60,6 +60,7 @@ KEY_OVERRIDE_ENABLE = no
 CUSTOM_MATRIX = lite
 
 SRC += mcp2301x.c \
-    mcp2301x_matrix.c
+    mcp2301x_matrix.c \
+	pointer.c
 
 QUANTUM_LIB_SRC += i2c_master.c
