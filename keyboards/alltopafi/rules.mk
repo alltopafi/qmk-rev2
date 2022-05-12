@@ -20,8 +20,11 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no          # Audio output
 
+JOYSTICK_ENABLE = no       # Joystick Game controller HID Interface
+JOYSTICK_DRIVER = analog    # Stick mode analog or digital
+
 POINTING_DEVICE_ENABLE = no # Generic Pointer
-SRC += analog.c
+# SRC += analog.c
 POINTING_DEVICE_DRIVER = custom
 # POINTING_DEVICE_DRIVER = analog_joystick
 
@@ -40,15 +43,21 @@ VIA_ENABLE = yes            # VIA Keymap function
 # LINK_TIME_OPTIMIZATION_ENABLE = yes
 LTO_ENABLE = yes # Config Option Link Time Optimization
 
-CUSTOM_MATRIX = lite
 
-SRC += matrix.c
-QUANTUM_LIB_SRC += i2c_master.c
+# SRC += matrix.c
+# QUANTUM_LIB_SRC += i2c_master.c
 
-ENCODER_ENABLE = yes
+ENCODER_ENABLE = no
 
 QMK_SETTINGS = yes
 TAP_DANCE_ENABLE = no
 COMBO_ENABLE = no
 KEY_OVERRIDE_ENABLE = no
 
+
+CUSTOM_MATRIX = lite
+
+SRC += mcp2301x.c \
+    mcp2301x_matrix.c
+
+QUANTUM_LIB_SRC += i2c_master.c
