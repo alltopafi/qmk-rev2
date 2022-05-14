@@ -48,8 +48,8 @@
 #define POINTER_X_AXIS_PIN B5
 #define POINTER_Y_AXIS_PIN F0
 
-#define ENCODERS_PAD_A { B6 }
-#define ENCODERS_PAD_B { B2 }
+#define ENCODERS_PAD_A { F1 }
+#define ENCODERS_PAD_B { C7 }
 
 
 #define USB_MAX_POWER_CONSUMPTION 100

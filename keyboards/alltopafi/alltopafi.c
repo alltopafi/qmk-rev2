@@ -1,3 +1,4 @@
+#include QMK_KEYBOARD_H
 #include "alltopafi.h"
 #include "i2c_master.h"
 #include "mcp2301x.h"
@@ -21,11 +22,3 @@ void matrix_scan_kb(void) {
     matrix_scan_user();
     // mcp2301x_encoder_read();
 }
-
-/*void torn_set_led(uint8_t led, bool state) {
-    led_state[led] = !state;
-
-    // toggle leds by setting the pin direction
-    uint8_t iodir = ((MCP2301X_INPUT >> 8) & ~0b111) | led_state[0] << 2 | led_state[1] << 1 | led_state[2];
-    mcp2301x_writeReg(IODIRB, &iodir, 1);
-}*/

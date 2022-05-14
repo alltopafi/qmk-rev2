@@ -92,7 +92,7 @@ bool oled_task_user(void) {
     oledState = 3;
 
     // Host Keyboard Layer Status
-    oled_write_P(PSTR("DIE! HAHAHA!!!\n"), false);
+    oled_write_P(PSTR("To the Batcave!!!\n"), false);
     oled_write_P(PSTR("Layer: "), false);
 
     switch (get_highest_layer(layer_state)) {
@@ -125,8 +125,6 @@ bool oled_task_user(void) {
 #endif
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    // if (index == 0) { /* First encoder */
-
     if(clockwise) {
         if(get_mods() & MOD_MASK_GUI) {
             tap_code(KC_TAB);
@@ -157,3 +155,5 @@ void keyboard_post_init_user(void) {
   debug_keyboard=true;
   debug_mouse=true;
 }
+
+
