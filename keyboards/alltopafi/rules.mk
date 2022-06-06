@@ -39,6 +39,7 @@ KEY_OVERRIDE_ENABLE = no
 
 
 CUSTOM_MATRIX = lite
+USE_RIGHT_SIDE = yes
 
 SRC += mcp2301x.c \
     mcp2301x_matrix.c \

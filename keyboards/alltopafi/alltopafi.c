@@ -3,6 +3,7 @@
 #include "i2c_master.h"
 #include "mcp2301x.h"
 
+
 void matrix_init_kb(void) {
     // put your keyboard start-up code here
     // runs once when the firmware starts up
@@ -18,6 +19,7 @@ void matrix_scan_kb(void) {
         mcp2301x_init(MCP2301X_INPUT, MCP2301X_PULLUP, MCP2301X_ENABLED);
         // mcp2301x_encoder_init();
     }
+
 
     matrix_scan_user();
     // mcp2301x_encoder_read();

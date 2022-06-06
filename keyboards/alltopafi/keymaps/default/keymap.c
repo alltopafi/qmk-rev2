@@ -1,8 +1,8 @@
 #include QMK_KEYBOARD_H
 // #include "print.h"
 
-#define KC_MAC_COPY LGUI(KC_C)
-#define KC_MAC_PASTE LGUI(KC_V)
+#define KC_MC_CPY LGUI(KC_C)
+#define KC_MC_PST LGUI(KC_V)
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
@@ -14,28 +14,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
     [_BASE] = LAYOUT( //TODO how do we allow the left side to work without the right side???
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_ESC  ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                             KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,KC_2 ,
+     KC_ESC  ,KC_1    ,KC_2    ,KC_3    ,KC_4    ,KC_5    ,                                             KC_6    ,KC_7    ,KC_8    ,KC_9    ,KC_0    ,KC_MINS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_TAB  ,KC_Q    ,KC_W    ,KC_E    ,KC_R    ,KC_T    ,KC_LBRC ,                           KC_RBRC,KC_Y    ,KC_U    ,KC_I    ,KC_O    ,KC_P    ,KC_2  ,
+     KC_TAB  ,KC_Q    ,KC_W    ,KC_E    ,KC_R    ,KC_T    ,KC_LBRC ,                          KC_RBRC, KC_Y    ,KC_U    ,KC_I    ,KC_O    ,KC_P    ,KC_BSLS ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_CAPS ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,KC_MAC_COPY  ,                KC_MAC_PASTE ,KC_H    ,KC_J    ,KC_K    ,KC_L    ,KC_2    ,KC_2 ,
+     KC_CAPS ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,KC_MC_CPY,                         KC_MC_PST,KC_H   ,KC_J    ,KC_K    ,KC_L    ,KC_SCLN ,KC_QUOT ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT    ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,KC_DEL ,KC_MUTE ,        KC_2    ,KC_2    ,KC_N    ,KC_M    ,KC_2    ,KC_2    ,KC_2    ,KC_2 ,
+     KC_LSFT    ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,KC_DEL ,KC_MUTE ,        KC_EQL  ,_______ ,KC_N    ,KC_M    ,KC_COMM ,KC_DOT  ,KC_SLSH ,KC_RSFT ,
   //├────────┼────────┼──────56──┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     TG(1) ,KC_MAC_COPY  ,KC_LCTL ,KC_LALT      ,KC_LGUI     ,KC_SPC ,KC_BSPC  ,     KC_2    ,KC_2        ,KC_2         ,KC_2    ,KC_2    ,KC_2    ,KC_2
+     TG(1)   ,KC_2     ,KC_LCTL ,KC_LALT      ,KC_LGUI    ,KC_BSPC,  KC_SPC ,        KC_ENT  ,KC_SPC      ,KC_RGUI      ,KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
   [_SECONDARY] = LAYOUT( //TODO how do we allow the left side to work without the right side???
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_GRAVE,KC_F1    ,KC_F2    ,KC_F3    ,KC_F4    ,KC_F5    ,                                             KC_2    ,KC_2    ,KC_2    ,KC_2    ,KC_2    ,KC_2 ,
+     KC_GRAVE,KC_F1   ,KC_F2   ,KC_F3   ,KC_F4   ,KC_F5   ,                                            KC_F8   ,KC_F9   ,KC_F10  ,KC_F11  ,KC_F12  ,KC_NO   ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO    ,KC_NO  ,                           KC_2    ,KC_2    ,KC_2    ,KC_2    ,KC_2    ,KC_2    ,KC_2  ,
+     KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO    ,KC_F6  ,                         KC_F7    ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   , KC_NO  ,                          KC_2 ,KC_2    ,KC_2    ,KC_2    ,KC_2    ,KC_2 ,KC_2 ,
+     KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   , KC_NO  ,                          KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,QK_BOOT ,        KC_2 ,KC_2    ,KC_2    ,KC_2    ,KC_2 ,KC_2  ,KC_2 ,KC_2 ,
+     KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO     ,QK_BOOT ,        KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO   ,
   //├────────┼────────┼──────56──┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     TG(1)   ,_______ ,_______ ,_______     ,_______      ,KC_NO   ,KC_NO   ,        KC_2  ,KC_2  ,    KC_2 ,     KC_2 ,KC_2 ,KC_2   ,KC_2
+     TG(1)   ,_______ ,_______ ,_______      ,_______      ,KC_NO   ,KC_NO   ,      KC_NO    ,KC_NO       ,KC_NO        ,KC_NO   ,KC_NO   ,KC_NO   ,KC_NO
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   )
 };
