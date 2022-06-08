@@ -11,7 +11,7 @@ BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = yes       # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = yes         # Console for debug
-COMMAND_ENABLE = yes         # Commands for debug and configuration
+COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = no            # USB Nkey Rollover
 AUDIO_ENABLE = no          # Audio output
 
@@ -22,10 +22,10 @@ POINTING_DEVICE_DRIVER = custom
 
 OLED_ENABLE = yes           # Display Feature
 OLED_DRIVER = SSD1306       # OLED SSD1306 128x32
+WPM_ENABLE = yes
 
 DYNAMIC_MACRO_ENABLE = no  # Dynamic Macro
-
-VIA_ENABLE = yes            # VIA Keymap function
+VIA_ENABLE = no            # VIA Keymap function
 
 # LINK_TIME_OPTIMIZATION_ENABLE = yes
 LTO_ENABLE = yes # Config Option Link Time Optimization
