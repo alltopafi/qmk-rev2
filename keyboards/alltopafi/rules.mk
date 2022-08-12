@@ -16,7 +16,7 @@ NKRO_ENABLE = no            # USB Nkey Rollover
 AUDIO_ENABLE = no          # Audio output
 
 
-POINTING_DEVICE_ENABLE = yes # Generic Pointer
+POINTING_DEVICE_ENABLE = no # Generic Pointer
 SRC += analog.c
 POINTING_DEVICE_DRIVER = custom
 
